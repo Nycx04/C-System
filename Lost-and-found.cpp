@@ -5,7 +5,9 @@
 //adjust code later for linked list coz i dont fully understand what he means by that
 //need to be able to tell how many lost item in a category (can be done with for sizeof)
 // still arguing with myself to use switch for categories
-// decided to use switch for category to make it intercative where user will choose which category they want to view
+// the output dont have spaces for some reason not sure how to fix
+//categories choices doesnt have numbers in it 
+
 
 int main() {
     
@@ -13,6 +15,10 @@ int main() {
     
     std::string categories[] = {"Clothes", "Toys", "Electronic devices"};
     int size = sizeof(categories) / sizeof(categories[0]);
+    
+    for (int i = 0; i < size; i++ ) {
+    std::cout << categories[i] << " \n";
+    }
     
     std::string Clothes[] = {"Tshirt", "Shorts", "jackets", "bracelet"};
     
@@ -32,14 +38,23 @@ int main() {
         }
         break;
     }
-    case 2: {
-        int toysize = sizeof(toysize) / sizeof(toysize[0]);
+    case 2: { // for toys
+        int toysize = sizeof(toys) / sizeof(toys[0]);
         for(int i = 0; i < toysize; i++) {
-            
-        }   //gym time update later
+            std::cout << toys[i];
+        } 
         break;
     }
-    
+    case 3: {// for electronics
+        int electronicssize = sizeof(electronics) / sizeof(electronics[0]);
+        for (int i = 0; i < electronicssize; i++) {
+            std::cout << electronics[i];
+        }
+        break;
+    } 
+
+    default: 
+    std::cout << "invalid choice dumbass\n";
 }
     
     
