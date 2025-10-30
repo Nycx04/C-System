@@ -10,11 +10,11 @@
 //categories choices doesnt have numbers in it 
 
 int searchclothes(std::string Clothes[], int clothesize, std::string clotheconfirm); // function declaration FOR CLOTHES 
-
+int searchToys(std::string toys[], int toysize, std::string toyconfirm ); // function declare for toysss
 
 int main() {
     
-    int choices; // for the switch kind of self-explanatory tbh
+    int choices;
     int searchNumber; //the number where its at
     std::string searchResult; //the thing were looking for
     
@@ -25,7 +25,7 @@ int main() {
     std::cout << categories[i] << " \n";
     }
     
-    std::string Clothes[] = {"Tshirt", "Shorts", "jackets", "bracelet"};
+    std::string Clothes[] = {"Tshirt", "Shorts", "jackets", "bracelet"}; // need many items in all three arrays not just these 
     int clothesize = sizeof(Clothes) / sizeof(Clothes[0]);
     
     std::string toys[] = {"teddy bear", "toy car", "AK-47"};
@@ -76,8 +76,14 @@ searchNumber = searchclothes(Clothes, clothesize, searchResult);  //the search t
     else {
         std::cout << " it aint here man";
     }
-    
-    
+
+searchNumber = searchclothes(toys, toysize, searchResult); // need new variable to use here not searchnumber it confuses the computer whether the item is here or not thus giving both results 
+    if (searchNumber != -1) {
+        std::cout << searchResult << "  is right at index: " << searchNumber; //probably need to do the same to the searchresult gotta rename them two and make new ones for the electronics
+    }
+    else {
+        std::cout << " it aint here man";
+    }
     return 0;
 }
 
@@ -91,4 +97,12 @@ int searchclothes(std::string Clothes[], int clothesize, std::string clotheconfi
     return -1; //apparently its the default of saying "its not found in here man" in c++
 }
 
+int searchToys(std::string toys[], int toysize, std::string toyconfirm ) {
+    for (int i = 0; i < toysize; i++) {
+        if (toys[i] == toyconfirm) {
+            return i;
+        }
+    }
+    return -1;
+}
 
