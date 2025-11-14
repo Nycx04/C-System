@@ -1,0 +1,77 @@
+PROJECT ALGORITHM 
+
+A. Array + Linked List → Store list of courses
+
+Each course has:
+
+courseCode  
+courseName  
+instructor  
+day  
+time  
+prerequisites (optional)
+
+
+Algorithm:
+
+Use a static array to store fixed courses.
+
+Use a linked list for dynamic additions/removals.
+
+B. Queue → Handle scheduling requests
+
+A request contains:
+
+studentName  
+courseCode  
+timestamp
+
+
+Algorithm:
+
+New requests = enqueue
+
+Process next request = dequeue
+
+Display pending requests = iterate queue
+
+C. Stack → Undo last scheduling action
+
+Actions include:
+
+AddCourse  
+RemoveCourse  
+EnrollStudent  
+DropStudent
+
+
+Algorithm:
+
+After every action, push a record to stack
+
+Undo = pop stack and reverse action
+
+D. Tree → Store subjects alphabetically
+
+Use a simple Binary Search Tree (BST)
+
+Algorithm:
+
+Insert: if subject < root → left, else → right
+Search: same logic
+In-order traversal → alphabetical order
+
+E. Graph → Represent prerequisite subjects
+
+Courses become nodes.
+Prerequisites become edges.
+
+Algorithm:
+
+Use adjacency list
+
+Add edge: Course A → Course B (B is prerequisite)
+
+DFS to check prerequisite chains
+
+Detect cycles (invalid prereq loops)
