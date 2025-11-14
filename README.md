@@ -1,2 +1,2 @@
 # C-System
-Group Project written in c++
+Project written in c++
