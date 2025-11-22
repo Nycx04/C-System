@@ -57,7 +57,26 @@ void displayCourses(Ncourses* head) {
         cout << temp->course << endl;
         temp = temp->next;
     }
-    cout << "---------------------------------\n";
+    cout << "---------------------------------\n"; 
+}
+
+void addCourses(Ncourses*& head) { //add new courses on ruun time
+    string course;
+    char choices;
+    cout << "Add new course? (Y/N)";
+    cin >> choices;
+    if (choices == 'N' || choices == 'n'){
+        cout << "Okay... Moving on!";
+        return;
+    }
+
+    cin.ignore(); 
+
+    cout << "\nEnter New course: ";
+    getline(cin, course);
+
+    insertEnd(head, course);
+    cout << "course added!";
 }
 
 int main () {
@@ -78,7 +97,7 @@ int main () {
         "\n1. Programming", 
         "\n2. Ptech",
         "\n3. Mmw", 
-        "\n4. Data Strctures"
+        "\n4. Data Strctures\n"
     };
 
     int courseCount = sizeof(courses) / sizeof(courses[0]);
@@ -90,8 +109,9 @@ int main () {
     }
 
     displayCourses(head);
+    addCourses(head);
+    displayCourses(head);
 
     return 0;
 
-}   
-
+}
