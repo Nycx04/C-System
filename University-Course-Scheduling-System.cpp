@@ -79,6 +79,32 @@ void addCourses(Ncourses*& head) { //add new courses on ruun time
     cout << "course added!";
 }
 
+void deletecourses(Ncourses*& head) { //delete courss 
+    if (head = NULL) {
+        cout << "Nothing to delete fam";
+        return;
+    } 
+
+    string redundant;
+    char deleted;
+    cout << "are youu gonna delete a course? (Y/N)";
+    if (deleted == 'Y' || deleted == 'y') {
+        cout << "goodbye then hope to never see you again";
+        return;
+    }
+
+    cin.ignore();
+
+    cout << "Enter course to delete: ";
+    cin >> redundant;
+    
+    Ncourses* temp = head;
+    Ncourses* prev = NULL;
+
+    while
+
+}
+
 int main () {
     std::cout << "-------------------------------------------------------------------------------------------";
     cout << "\n\n";
