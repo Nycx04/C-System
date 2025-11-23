@@ -101,8 +101,24 @@ void deletecourses(Ncourses*& head) { //delete courss
     Ncourses* temp = head;
     Ncourses* prev = NULL;
 
-    while
+    while (temp != NULL && temp->course != redundant) {
+        prev = temp;
+        temp = temp->next;
+    }
 
+    if(temp == NULL) {
+        cout << "course not found.";
+        return;
+    }
+
+    if (prev == NULL ) {
+        head = head->next;
+    } else {
+    prev->next = temp->next;
+    }
+
+    delete temp;
+    cout << "course removed";
 }
 
 int main () {
@@ -137,7 +153,7 @@ int main () {
     displayCourses(head);
     addCourses(head);
     displayCourses(head);
-
+    deletecourses(head);
     return 0;
 
 }
